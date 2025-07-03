@@ -1,8 +1,7 @@
 workflows:
   expo-multi-platform:
     name: Expo iOS & Android
-    environment:
-      vars: 
+    environment: 
       node: 18.16.0
     scripts:
       - npm install -g eas-cli
