@@ -11,6 +11,6 @@ workflows:
           npm install
       - name: Build iOS IPA using EAS
         script: |
-          eas build --platform ios --profile ios --non-interactive --token $EXPO_TOKEN
+          eas build --platform ios --profile ios --non-interactive
     artifacts:
       - build/**/ios/**/*.ipa
