@@ -3,7 +3,7 @@ workflows:
     name: Expo iOS & Android
     environment:
       vars:
-        EXPO_TOKEN: Encrypted(123)
+        EXPO_TOKEN: $EXPO_TOKEN
       node: 18.16.0
     scripts:
       - npm install -g eas-cli
