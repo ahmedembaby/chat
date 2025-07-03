@@ -1,15 +1,15 @@
 workflows:
-
-  ios-workflow:
-
-    name: iOS Workflow 
-
-    # ....
-
+  expo-multi-platform:
+    name: Expo iOS & Android
     environment:
-
-      ios_signing:
-
-        distribution_type: development  # or: ad_hoc | development | enterprise
-
-        bundle_identifier: com.mbabii.chat
+      vars:
+        EXPO_TOKEN: Encrypted(123)
+      node: 18.16.0
+    scripts:
+      - npm install -g eas-cli
+      - npm install
+      - eas build --platform all --non-interactive --token $EXPO_TOKEN
+    artifacts:
+      - build/**/*.apk
+      - build/**/*.aab
+      - build/**/*.ipa
