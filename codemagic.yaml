@@ -2,11 +2,13 @@ workflows:
   expo-multi-platform:
     name: Expo iOS & Android
     environment:
+      vars:
+        EXPO_TOKEN: Encrypted(7mMPJVDASVRKrMxuj0DaRFJnRiyBN4sHZ-nxsmOv)
       node: 18.16.0
     scripts:
       - npm install -g eas-cli
       - npm install
-      - eas build --platform all --non-interactive
+      - eas build --platform all --non-interactive --token $EXPO_TOKEN
     artifacts:
       - build/**/*.apk
       - build/**/*.aab
